@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="202309091200" author="Andrew">
+        <createTable tableName="account">
+            <column name="account_id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="account_account_id_pk"/>
+            </column>
+
+            <column name="name" type="varchar(250)">
+                <constraints notNullConstraintName="account_name_nn"/>
+            </column>
+
+            <column name="money" type="bigint">
+                <constraints notNullConstraintName="account_money_nn"/>
+            </column>
+
+            <column name="pin" type="int">
+                <constraints notNullConstraintName="account_pin_nn"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
